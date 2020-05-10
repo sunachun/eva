@@ -1,0 +1,16 @@
+<div class="main users-index">
+  <div class="arrange-container">
+    <% @users.each do |user| %>
+      <div class="users-index-item">
+        <div class="user-left">
+          <%= link_to("/users/#{user.id}") do %>
+            <img src="<%= "/user_images/#{user.image}" %>">          
+          <% end %>
+        </div>
+        <div class="user-right">
+          <%= link_to(user.name, "/users/#{user.id}") %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

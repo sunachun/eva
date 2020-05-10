@@ -1,0 +1,40 @@
+<header>
+    <div class="header--logo">
+      <% if @current_user %>
+        <%= link_to("eva.", "/users/index") %>
+      <% else %>
+        <%= link_to("eva.", "/") %>
+      <% end %>
+    </div>
+    <ul class="header--menu">
+      <% if @current_user %>
+        <li>
+          <%= link_to(@current_user.name, "/users/#{@current_user.id}") %>
+        </li>
+        <li>
+          <%= link_to("/users/index") do %>
+            <img src="<%= "/user_images/home.jpg" %>" width=21 height=21>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to("新規投稿", "/posts/new") %>
+        </li>
+        <li>
+          <%= link_to("ログアウト", "/logout", {method: "post"}) %>
+        </li>
+      <% else %>
+        <li>
+          <%= link_to("新規登録", "/signup") %>
+        </li>
+        <li>
+            <%= link_to("ログイン", "/login") %>
+        </li>
+      <% end %>
+    </ul>
+  </header>
+<div class="main top-main">
+  <div class="top-message">
+     <p>これからは評価を高める！！</p>
+     <a href="https://www.instagram.com/evaluation_official/">instagram</a>
+  </div>
+</div>
