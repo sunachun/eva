@@ -17,14 +17,13 @@
 }
 .users-index-item {
   float: left;
-  text-align: left;
   box-shadow: 0 2px 6px #c1ced7;
-  width: 25%;
+  width: 23%;
   position: relative;
   height: auto;
   margin: 1%;
   overflow: hidden;
-  padding: 20px 30px;
+  padding: 20px 0 20px 0;
   display: table;
 }
 
@@ -50,8 +49,10 @@
 .user-right {
   width: 90%;
   padding-left: 25px;
-  text-align: center;
   vertical-align: middle;
+}
+.user-right-name{
+  text-align: center;
 }
 
 /* users/show ================================ */
@@ -176,4 +177,188 @@
   content: "";
   display: block;
   
+}
+
+
+
+/*search*/
+.container-search {
+  max-width: 80%;
+  margin: 60px auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  clear: both;
+}
+.container-a{
+  background-color: #fff;
+}
+.search {
+  width: 80%;
+  height: auto;
+  padding-top: 20px;
+  margin: 0 auto;
+}
+.search p{
+  font-size: 22px;
+  border-bottom: solid 1px #000000;
+}
+.search__query {
+  -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    width: 300px;
+    min-height: 30px;
+    text-overflow: ellipsis;
+    background: #f4f6f9;
+    font-size: 14px;
+    line-height: 14px;
+    border: 1px solid #8b8e96;
+    -webkit-border-radius: 2px;
+    -khtml-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+    border-radius: 2px;
+    padding: 0 32px 0 6px;
+    margin-top: 1%;
+}
+.btn-search {
+    padding: 0.5em
+}
+.search img{
+  width: 20px;
+  height: 15px;
+}
+.result{
+  width: 80%;
+  height: auto;
+  padding-top: 20px;
+  margin: 0 auto;
+}
+.result p{
+  font-size: 22px;
+  border-bottom: solid 1px #000000;
+}
+
+
+.listview {
+    padding: 0;
+    list-style: none;
+    margin: 0 0 0.5em;
+    box-shadow: 8px 3px 6px #00000029;
+}
+.result-a {
+  padding-right: 3em
+}
+
+.viewleft {
+    float: none;
+    margin: 1% 0 0 0 ;
+    width: 16.6667%;
+    display: inline-block;
+}
+.viewright {
+  display: inline-block;
+  padding: 20px;
+}
+.viewright h3 {
+  margin-top: 10px;
+}
+
+.viewimage img{
+  -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    max-width: 100%;
+    width: 110px;
+    height: 100px;
+    vertical-align: middle;
+    border-radius: 30%;
+}
+
+
+
+/*レビュー*/
+.rating-star {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    width: auto;
+    line-height: 1;
+    color: rgba(0, 0, 0, 0.1);
+}
+.rating-star-index {
+  margin: 10% 33%;
+}
+.bgcolor-black .rating-star,
+.bgcolor-gray-dark .rating-star,
+.bgcolor-gray-darker .rating-star {
+    color: rgba(255, 255, 255, 0.05)
+}
+.rating-star:before {
+    content: "\2605\2605\2605\2605\2605"
+}
+.rating-star > .star-actived,
+.rating-star > .star-distribution {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    width: 0;
+    color: #F5A624;
+    font-style: normal;
+    word-wrap: normal
+}
+.rating-star > .star-actived:before,
+.rating-star > .star-distribution:before {
+    content: "\2605\2605\2605\2605\2605"
+}
+.rating-star > .star-distribution {
+    color: #8b8e96
+}
+.rating-star .rate-100 {
+    width: 100%
+}
+.rating-star .rate-90 {
+    width: 90%
+}
+.rating-star .rate-80 {
+    width: 80%
+}
+.rating-star .rate-70 {
+    width: 70%
+}
+.rating-star .rate-60 {
+    width: 60%
+}
+.rating-star .rate-50 {
+    width: 50%
+}
+.rating-star .rate-40 {
+    width: 40%
+}
+.rating-star .rate-30 {
+    width: 30%
+}
+.rating-star .rate-20 {
+    width: 20%
+}
+.rating-star .rate-10 {
+    width: 10%
+}
+.rating-star .rate-5 {
+    width: 100%
+}
+.rating-star .rate-4 {
+    width: 80%
+}
+.rating-star .rate-3 {
+    width: 60%
+}
+.rating-star .rate-2 {
+    width: 40%
+}
+.rating-star .rate-1 {
+    width: 20%
 }

@@ -1,0 +1,42 @@
+<div class="main">
+  <div class="container-search">
+    <div class="container-a">
+      <div class="search">
+        <p>ユーザー検索</p>
+        <%= form_tag('/users/search', method: :get) do %>
+          <input class="search__query" name="keyword" placeholder="instagramのidで検索" type="text" value=""><button class="btn-search" title="検索" type="submit"><img src="/megane.png" /></button></input>
+        <% end %>
+        <form accept-charset="utf-8" action="/" class="js-search-submit" method="get">
+        </form>
+      </div>
+      <div class="result">
+        <p>検索結果</p>
+          <% @users.each do |user| %>
+            <div class="listview">
+              <a class="result-a" href="/users/<%= user.instaid %>/posts/new" title="<%= user.name %>">
+                <div class="row no-space-bottom">
+                  <div class="viewleft">
+                      <div class="viewimage" title="<%= user.name %>">
+                        <img src="/user_images/<%= user.image %>" />
+                      </div>
+                  </div>
+                  <div class="viewright">
+                    <h3><span class="color-sub"><%= user.name %></span></h3>
+                    <% if user.posts.present? %>
+                      <span class="rating-star">
+                        <i class="star-actived rate-<%= user.posts_average %>0"></i>
+                      </span>
+                    <% else %>
+                      <span class="rating-star">
+                        <i class="star-actived rate-0"></i>
+                      </span>
+                    <% end %>
+                  </div>
+                </div>
+              </a>
+            </div>
+          <% end %>
+      </div>
+    </div>
+  </div>
+</div>

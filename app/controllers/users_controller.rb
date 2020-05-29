@@ -79,6 +79,15 @@ class UsersController < ApplicationController
     redirect_to("/")
   end
   
+  def search
+    @users = User.where('instaid LIKE(?)', "%#{params[:keyword]}%").limit(10)
+  end
+  
+  def posted
+    @user = User.find_by(id: params[:id])
+    @posted = Post.where(post_id: @user.id)
+  end
+  
   def ensure_correct_user
     if @current_user.id != params[:id].to_i
       flash[:notice] = "権限がありません"

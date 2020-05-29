@@ -8,9 +8,17 @@
       <% if @user.id == @current_user.id %>
         <%= link_to("プロフィールを編集", "/users/#{@user.id}/edit") %>
       <% end %>
+      <% if @user.id != @current_user.id %>
+        <%= link_to("評価する", "/users/#{@user.instaid}/posts/new") %>
+      <% end %>
     </div>
     
-    <% @user.posts.each do |post| %>
+    <ul class="user-tabs">
+      <li class="active"><%= link_to("投稿", "/users/#{@user.id}") %></li>
+      <li><%= link_to("評価", "/users/#{@user.id}/posted") %></li>
+    </ul>
+    
+    <% @user.posted.each do |post| %>
       <div class="posts-index-item">
         <div class="post-left">
           <img src="<%= "/user_images/#{post.user.image}" %>">
@@ -18,6 +26,7 @@
         <div class="post-right">
           <div class="post-user-name">
             <%= link_to(post.user.name, "/users/#{post.user.id}") %>
+            <span class="rating-star"><i class="star-actived rate-<%= post.rate %>0"></i></span>
           </div>
           <%= link_to(post.content, "/posts/#{post.id}") %>
         </div>

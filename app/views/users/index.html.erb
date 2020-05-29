@@ -8,8 +8,21 @@
           <% end %>
         </div>
         <div class="user-right">
-          <%= link_to(user.name, "/users/#{user.id}") %>
+          <div class="user-right-name">
+            <%= link_to(user.name, "/users/#{user.id}") %>
+          </div>
         </div>
+        
+            <% if user.posts.present? %>
+              <span class="rating-star rating-star-index">
+                <i class="star-actived rate-<%= user.posts_average %>0"></i>
+              </span>
+            <% else %>
+              <span class="rating-star rating-star-index">
+                <i class="star-actived rate-0"></i>
+              </span>
+            <% end %>
+          
       </div>
     <% end %>
   </div>
